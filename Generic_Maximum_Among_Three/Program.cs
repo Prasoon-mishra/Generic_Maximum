@@ -1,7 +1,5 @@
 ﻿namespace Generic_Maximum_Among_Three
 {
-
-
     class FindMax<T> where T : IComparable<T>
     {
         private T Value1;
@@ -25,14 +23,19 @@
     {
         static void Main(string[] args)
         {
-            int max = new FindMax<int>(3, 4, 9).findMaximum();
-            Console.WriteLine(max);
-            //Console.WriteLine("Welcome to Generic");
-            //Maximum<int, int, int> obj1=new Maximum<int, int, int>();
-            //obj1.Value1 = 100;
-            //obj1.Value2 = 26;
-            //obj1.Value3 = 300;
-            //obj1.FindMaximum(100,26,300);
+            Console.WriteLine("Enter 1 to find the maximum in integers");
+            Console.WriteLine("Enter 2 to find the maximum in integers");
+            int Ans = Convert.ToInt32(Console.ReadLine());
+            switch(Ans)
+            {
+                case 1:
+                    int max = new FindMax<int>(3, 4, 9).findMaximum(); Console.WriteLine(max); break;
+                case 2:
+                    float maxFloat = new FindMax<float>(3.4f, 5.6f, 6.7f).findMaximum(); Console.WriteLine(maxFloat); break;
+                default: Console.WriteLine("Incorrect Value"); break;
+
+            }
+            
         }
     }
 }
